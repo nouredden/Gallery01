@@ -85,6 +85,53 @@
 					
 						</article>
 					</div>
+
+					<script src="https://apis.google.com/js/api.js"></script>
+
+<script>
+  gapi.load('client', initClient);
+
+  function initClient() {
+    gapi.client.init({
+      apiKey: 'AIzaSyAgilz748po1YuID578ync-CmF84V2ghoY',
+      clientId: '84183258545-jmuavqo43fkcub941ri30mj72q413ho5.apps.googleusercontent.com',
+      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+      scope: 'https://www.googleapis.com/auth/drive.readonly',
+    }).then(function() {
+      listFiles();
+    });
+  }
+
+  function listFiles() {
+    gapi.client.drive.files.list({
+      q: "'https://drive.google.com/drive/folders/1YnRef4tEBpdRV4JFAsH5JVPXi8URM-Kr?usp=sharing' in parents",  // Replace with your folder ID
+      fields: "files(name,webViewLink)",
+    }).then(function(response) {
+      const files = response.result.files;
+      const mediaContainer = document.getElementById('media-container');
+
+      files.forEach(function(file) {
+        const name = file.name;
+        const link = file.webViewLink;
+        
+        let mediaHTML = '';
+        if (name.endsWith('.jpg') || name.endsWith('.png') || name.endsWith('.jpeg')) {
+          mediaHTML = `
+            <article class="thumb">
+              <a href="${link}" class="image"><img src="${link}" alt="${name}" /></a>
+              <h2>${name}</h2>
+              <p>Description of the image.</p>
+            </article>
+          `;
+        }
+        // Add similar conditions for other media types
+
+        mediaContainer.innerHTML += mediaHTML;
+      });
+    });
+  }
+</script>
+
 					
 					
 					<!-- Footer -->
