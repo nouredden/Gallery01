@@ -84,53 +84,21 @@
 							<iframe width="640" height="360" src="https://www.youtube.com/embed/30ulxi7AypU" title="50 English Idioms: Introduction to NEW E-book" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="image"></iframe>
 					
 						</article>
+
+						<article class="thumb">
+						<a href="https://lh3.googleusercontent.com/drive-viewer/AK7aPaACK9Rj32a36Lb2jXPybcLod8skAhRflklOSpNRZyOo2kjsfkl39MX0eOlSxHqdWkr-P7_UEvUYs_LhHRkU915ENZwMEA=s1600?source=screenshot.guru"  class="image"> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaACK9Rj32a36Lb2jXPybcLod8skAhRflklOSpNRZyOo2kjsfkl39MX0eOlSxHqdWkr-P7_UEvUYs_LhHRkU915ENZwMEA=s1600" /> </a>
+					</article>		
+					<article class="thumb">
+						<a href="https://lh3.googleusercontent.com/drive-viewer/AK7aPaACK9Rj32a36Lb2jXPybcLod8skAhRflklOSpNRZyOo2kjsfkl39MX0eOlSxHqdWkr-P7_UEvUYs_LhHRkU915ENZwMEA=s1600?source=screenshot.guru"  class="image"> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaACK9Rj32a36Lb2jXPybcLod8skAhRflklOSpNRZyOo2kjsfkl39MX0eOlSxHqdWkr-P7_UEvUYs_LhHRkU915ENZwMEA=s1600" /> </a>
+					</article>	
+					<article class="thumb">
+						<a href="https://lh3.googleusercontent.com/drive-viewer/AK7aPaACK9Rj32a36Lb2jXPybcLod8skAhRflklOSpNRZyOo2kjsfkl39MX0eOlSxHqdWkr-P7_UEvUYs_LhHRkU915ENZwMEA=s1600?source=screenshot.guru"  class="image"> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaACK9Rj32a36Lb2jXPybcLod8skAhRflklOSpNRZyOo2kjsfkl39MX0eOlSxHqdWkr-P7_UEvUYs_LhHRkU915ENZwMEA=s1600" /> </a>
+					</article>	
+
+
 					</div>
 
-					<script src="https://apis.google.com/js/api.js"></script>
-
-<script>
-  gapi.load('client', initClient);
-
-  function initClient() {
-    gapi.client.init({
-      apiKey: 'AIzaSyAgilz748po1YuID578ync-CmF84V2ghoY',
-      clientId: '84183258545-jmuavqo43fkcub941ri30mj72q413ho5.apps.googleusercontent.com',
-      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
-      scope: 'https://www.googleapis.com/auth/drive.readonly',
-    }).then(function() {
-      listFiles();
-    });
-  }
-
-  function listFiles() {
-    gapi.client.drive.files.list({
-		q: "1YnRef4tEBpdRV4JFAsH5JVPXi8URM-Kr",  // Replace with your folder ID
-      fields: "files(name,webViewLink)",
-    }).then(function(response) {
-      const files = response.result.files;
-      const mediaContainer = document.getElementById('media-container');
-
-      files.forEach(function(file) {
-        const name = file.name;
-        const link = file.webViewLink;
-        
-        let mediaHTML = '';
-        if (name.endsWith('.jpg') || name.endsWith('.png') || name.endsWith('.jpeg')) {
-          mediaHTML = `
-            <article class="thumb">
-              <a href="${link}" class="image"><img src="${link}" alt="${name}" /></a>
-              <h2>${name}</h2>
-              <p>Description of the image.</p>
-            </article>
-			`;
-        }
-        // Add similar conditions for other media types
-
-        mediaContainer.innerHTML += mediaHTML;
-      });
-    });
-  }
-</script>
+					
 
 					
 					
