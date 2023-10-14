@@ -104,7 +104,7 @@
 
   function listFiles() {
     gapi.client.drive.files.list({
-      q: "'https://drive.google.com/drive/folders/1YnRef4tEBpdRV4JFAsH5JVPXi8URM-Kr?usp=sharing' in parents",  // Replace with your folder ID
+      q: "https://drive.google.com/drive/folders/1YnRef4tEBpdRV4JFAsH5JVPXi8URM-Kr?usp=sharing",  // Replace with your folder ID
       fields: "files(name,webViewLink)",
     }).then(function(response) {
       const files = response.result.files;
@@ -122,7 +122,7 @@
               <h2>${name}</h2>
               <p>Description of the image.</p>
             </article>
-          `;
+			`;
         }
         // Add similar conditions for other media types
 
